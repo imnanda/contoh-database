@@ -84,7 +84,7 @@ dari file csv ke mysql</note>
     </attributes>
   </connection>
   <order>
-  <hop> <from>CSV file input - Propinsi</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Table output - Propinsi</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>CSV file input - Propinsi</from><to>Mapping fields &amp; values</to><enabled>Y</enabled> </hop>  <hop> <from>Mapping fields &amp; values</from><to>Table output - Propinsi</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>CSV file input - Propinsi</name>
     <type>CsvInput</type>
@@ -145,7 +145,7 @@ dari file csv ke mysql</note>
     </step>
 
   <step>
-    <name>Select values</name>
+    <name>Mapping fields &amp; values</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>

@@ -15,7 +15,6 @@
       <rejected/>
       <connection/>
       <table/>
-      <step_performance_table/>
       <use_batchid>Y</use_batchid>
       <use_logfield>N</use_logfield>
     </log>
@@ -34,8 +33,6 @@
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
     <shared_objects_file/>
-    <capture_step_performance>N</capture_step_performance>
-    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <dependencies>
     </dependencies>
     <partitionschemas>
@@ -56,7 +53,7 @@ dari file csv ke PHI_DB</note>
       <xloc>61</xloc>
       <yloc>17</yloc>
       <width>132</width>
-      <heigth>60</heigth>
+      <heigth>62</heigth>
     </notepad>
   </notepads>
   <connection>
@@ -87,9 +84,9 @@ dari file csv ke PHI_DB</note>
     </attributes>
   </connection>
   <order>
-  <hop> <from>CSV file input - Nama</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Table output - Nama</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>CSV file input - Nama</from><to>name_tk - sequence</to><enabled>Y</enabled> </hop>  <hop> <from>name_tk - sequence</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Table output - Nama</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>Add sequence</name>
+    <name>name_tk - sequence</name>
     <type>Sequence</type>
     <description/>
     <distribute>Y</distribute>
@@ -100,7 +97,7 @@ dari file csv ke PHI_DB</note>
            </partitioning>
       <valuename>name_tk</valuename>
       <use_database>N</use_database>
-      <connection/>
+      <connection>PHI_DB</connection>
       <schema/>
       <seqname>SEQ_</seqname>
       <use_counter>Y</use_counter>
@@ -127,17 +124,11 @@ dari file csv ke PHI_DB</note>
            <schema_name/>
            </partitioning>
     <filename>${Internal.Transformation.Filename.Directory}\phi_integration_daftar_nama_unik.csv</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
     <separator>;</separator>
     <enclosure>&quot;</enclosure>
     <header>Y</header>
     <buffer_size>100</buffer_size>
     <lazy_conversion>N</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <encoding/>
     <fields>
       <field>
         <name>Generate Nama Depan</name>
