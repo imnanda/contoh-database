@@ -79,6 +79,22 @@ dimana maksimum penjualan
       <width>145</width>
       <heigth>75</heigth>
     </notepad>
+    <notepad>
+      <note> * Copyright (c) 2009 PHI-Integration.com.  All rights reserved. 
+ * This software was developed by PHI-Integration.com and is provided under the terms 
+ * of the GNU Lesser General Public License, Version 2.1. You may not use 
+ * this file except in compliance with the license. If you need a copy of the license, 
+ * please go to http:&#47;&#47;www.gnu.org&#47;licenses&#47;lgpl-2.1.txt. 
+ *
+ * Software distributed under the GNU Lesser Public License is distributed on an &quot;AS IS&quot; 
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or  implied. Please refer to 
+ * the license for the specific language governing your rights and limitations.
+</note>
+      <xloc>35</xloc>
+      <yloc>452</yloc>
+      <width>437</width>
+      <heigth>140</heigth>
+    </notepad>
   </notepads>
   <connection>
     <name>DIPA_ORA</name>
@@ -241,9 +257,7 @@ dimana maksimum penjualan
     <compatible>N</compatible>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-var tgl_transaksi;
+        <jsScript_script>var tgl_transaksi;
 var beda;
 var harga_per_periode;
 var mytest;
@@ -615,10 +629,7 @@ Alert(dateAdd(d1, &quot;wd&quot;, 5));</jsScript_script>
     <compatible>Y</compatible>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-;
-
-generator = new java.util.Random();
+        <jsScript_script>generator = new java.util.Random();
 
 jumlahitem = 41;
 max_permintaan = 30;
