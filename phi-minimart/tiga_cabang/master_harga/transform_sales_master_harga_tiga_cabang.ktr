@@ -445,7 +445,7 @@ biaya_cabang = harga_berlaku_cabang * koefisien_biaya;
       <field>
         <name>tgl_berlaku</name>
         <type>Date</type>
-        <format/>
+        <format>yyyy-MM-dd</format>
         <currency/>
         <decimal/>
         <group/>
