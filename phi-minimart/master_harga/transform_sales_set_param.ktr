@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>transform_sales_set_param</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_status>0</trans_status>
+    <directory>&#47;</directory>
+    <log>
+      <read/>
+      <write/>
+      <input/>
+      <output/>
+      <update/>
+      <rejected/>
+      <connection/>
+      <table/>
+      <use_batchid>Y</use_batchid>
+      <use_logfield>N</use_logfield>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <modified_user>-</modified_user>
+  <modified_date>2009&#47;02&#47;01 08:15:11.578</modified_date>
+  </info>
+  <notepads>
+    <notepad>
+      <note>transform_sales_set_param v0.10</note>
+      <xloc>22</xloc>
+      <yloc>23</yloc>
+      <width>168</width>
+      <heigth>23</heigth>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>DIPA_ORA</name>
+    <server>10.10.11.153</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>compiere</database>
+    <port>1521</port>
+    <username>compiere</username>
+    <password>Encrypted 2be98afc86aa7f2e4a849a360d797bddf</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>INITIAL_POOL_SIZE</code><attribute>1</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MAXIMUM_POOL_SIZE</code><attribute>5</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>PHI_DB</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>phi_minimart</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>INITIAL_POOL_SIZE</code><attribute>5</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MAXIMUM_POOL_SIZE</code><attribute>10</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Generate Rows</from><to>Perbedaan Jumlah Hari</to><enabled>Y</enabled> </hop>  <hop> <from>Perbedaan Jumlah Hari</from><to>Set Variables</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>Generate Rows</name>
+    <type>RowGenerator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>tgl_awal_generasi</name>
+        <type>Date</type>
+        <format>MM&#47;dd&#47;yyyy</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>01&#47;01&#47;2008</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>tgl_akhir_generasi</name>
+        <type>Date</type>
+        <format>MM&#47;dd&#47;yyyy</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>01&#47;01&#47;2009</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>jumlah_max_penjualan_harian</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <limit>1</limit>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>34</xloc>
+      <yloc>84</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Perbedaan Jumlah Hari</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+
+var jumlah_hari = dateDiff(tgl_awal_generasi,tgl_akhir_generasi,&quot;d&quot;);</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>dateDiff_Sample</jsScript_name>
+        <jsScript_script>&#47;&#47; Returns the difference, of a given type, between 
+&#47;&#47; two dates.
+&#47;&#47;
+&#47;&#47; Usage:
+&#47;&#47; dateDiff(var,var,var);
+&#47;&#47; 1: Date - The Variable with the Startdate.
+&#47;&#47; 2: Date - The Variable with the Endate.
+&#47;&#47; 3: String - The Type which represents the 
+&#47;&#47; the return value.
+&#47;&#47; y - Years
+&#47;&#47; m - Months
+&#47;&#47; d - Days
+&#47;&#47; w - Weeks
+&#47;&#47; wd - Workingdays
+&#47;&#47; hh - Hours
+&#47;&#47; mi - Minutes
+&#47;&#47; ss - Seconds
+&#47;&#47; 
+&#47;&#47; 2006-11-15
+&#47;&#47;
+var d1 = new Date();
+var d2 = dateAdd(d1,&quot;y&quot;,1);
+Alert(dateDiff(d1,d2,&quot;y&quot;));
+Alert(dateDiff(d1,d2,&quot;m&quot;));
+Alert(dateDiff(d1,d2,&quot;d&quot;));
+Alert(dateDiff(d1,d2,&quot;wd&quot;));</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>jumlah_hari</name>
+        <rename>jumlah_hari</rename>
+        <type>String</type>
+        <length>4</length>
+        <precision>-1</precision>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>146</xloc>
+      <yloc>87</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <field_name>tgl_awal_generasi</field_name>
+        <variable_name>TGL_AWAL_GENERASI</variable_name>
+        <variable_type>JVM</variable_type>
+        </field>
+      <field>
+        <field_name>tgl_akhir_generasi</field_name>
+        <variable_name>TGL_AKHIR_GENERASI</variable_name>
+        <variable_type>JVM</variable_type>
+        </field>
+      <field>
+        <field_name>jumlah_max_penjualan_harian</field_name>
+        <variable_name>JUMLAH_MAX_PENJUALAN_HARIAN</variable_name>
+        <variable_type>JVM</variable_type>
+        </field>
+      <field>
+        <field_name>jumlah_hari</field_name>
+        <variable_name>JUMLAH_HARI</variable_name>
+        <variable_type>JVM</variable_type>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>263</xloc>
+      <yloc>88</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>
