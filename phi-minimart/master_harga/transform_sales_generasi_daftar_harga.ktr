@@ -167,67 +167,7 @@ native Java code</note>
     </attributes>
   </connection>
   <order>
-  <hop> <from>Generate Rows</from><to>Join Rows (cartesian product)</to><enabled>Y</enabled> </hop>  <hop> <from>Hitung Harga &amp; Modal Harian</from><to>Calculator</to><enabled>Y</enabled> </hop>  <hop> <from>Calculator</from><to>Select Output Fields</to><enabled>Y</enabled> </hop>  <hop> <from>Select Output Fields</from><to>Output Daftar Harga</to><enabled>Y</enabled> </hop>  <hop> <from>Item</from><to>Select Input Fields</to><enabled>Y</enabled> </hop>  <hop> <from>Select Input Fields</from><to>Join Rows (cartesian product)</to><enabled>Y</enabled> </hop>  <hop> <from>Join Rows (cartesian product)</from><to>Get ${TGL_AWAL_GENERASI}</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${TGL_AWAL_GENERASI}</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Hitung Harga &amp; Modal Harian</to><enabled>Y</enabled> </hop>  </order>
-  <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>rounding</field_name>
-<calc_type>CONSTANT</calc_type>
-<field_a>-1</field_a>
-<field_b/>
-<field_c/>
-<value_type>-</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>harga_round</field_name>
-<calc_type>ROUND_2</calc_type>
-<field_a>harga_berlaku</field_a>
-<field_b>rounding</field_b>
-<field_c/>
-<value_type>-</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>modal_round</field_name>
-<calc_type>ROUND_2</calc_type>
-<field_a>modal</field_a>
-<field_b>rounding</field_b>
-<field_c/>
-<value_type>-</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>612</xloc>
-      <yloc>244</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
+  <hop> <from>Generate Rows</from><to>Join Rows (cartesian product)</to><enabled>Y</enabled> </hop>  <hop> <from>Hitung Harga &amp; Modal Harian</from><to>Rounding Calculator</to><enabled>Y</enabled> </hop>  <hop> <from>Rounding Calculator</from><to>Select Output Fields</to><enabled>Y</enabled> </hop>  <hop> <from>Select Output Fields</from><to>Output Daftar Harga</to><enabled>Y</enabled> </hop>  <hop> <from>Item</from><to>Select Input Fields</to><enabled>Y</enabled> </hop>  <hop> <from>Select Input Fields</from><to>Join Rows (cartesian product)</to><enabled>Y</enabled> </hop>  <hop> <from>Join Rows (cartesian product)</from><to>Get ${TGL_AWAL_GENERASI}</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${TGL_AWAL_GENERASI}</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Hitung Harga &amp; Modal Harian</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Generate Rows</name>
     <type>RowGenerator</type>
@@ -745,7 +685,7 @@ Alert(dateAdd(d1, &quot;wd&quot;, 5));</jsScript_script>
       <field>
         <name>harga_berlaku</name>
         <type>Number</type>
-        <format>#</format>
+        <format>0</format>
         <currency/>
         <decimal/>
         <group/>
@@ -756,7 +696,7 @@ Alert(dateAdd(d1, &quot;wd&quot;, 5));</jsScript_script>
       <field>
         <name>modal</name>
         <type>Number</type>
-        <format>#</format>
+        <format>0</format>
         <currency/>
         <decimal/>
         <group/>
@@ -769,6 +709,66 @@ Alert(dateAdd(d1, &quot;wd&quot;, 5));</jsScript_script>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>614</xloc>
       <yloc>461</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Rounding Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>rounding</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>-1</field_a>
+<field_b/>
+<field_c/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>harga_round</field_name>
+<calc_type>ROUND_2</calc_type>
+<field_a>harga_berlaku</field_a>
+<field_b>rounding</field_b>
+<field_c/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>modal_round</field_name>
+<calc_type>ROUND_2</calc_type>
+<field_a>modal</field_a>
+<field_b>rounding</field_b>
+<field_c/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>612</xloc>
+      <yloc>244</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
