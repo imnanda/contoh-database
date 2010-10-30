@@ -1,0 +1,31 @@
+employee_id,employee_first_name,employee_last_name,employee_sex,position,division
+01,Niken,Jagat,Female,Staff,Sales & Marketing
+02,Kristina,Terang,Female,Manager,Procurement
+03,Cahyono,Damai,Male,Staff,Technical Support
+04,Ardhi,Dominik,Male,Staff,Finance & Accounting
+05,Gita,Widya,Female,Staff,Customer Service
+06,Ferdy,Dewangga,Male,Staff,Technical Support
+07,Ardhi,Dominik,Male,Staff,Customer Service
+08,Eriq,Rukun,Male,Assistant Manager,Technical Support
+09,Mawar,Pekerti,Female,Manager,Customer Service
+10,Mega,Dewangga,Female,Staff,Sales & Marketing
+11,Ahmad,Mada,Male,Manager,Sales & Marketing
+12,Ferdy,Alexander,Male,Assistant Manager,Customer Service
+13,Sentosa,Indrawan,Male,Staff,Customer Service
+14,Rasti,Mardi,Female,Manager,Finance & Accounting
+15,Mega,Selangit,Female,Staff,Finance & Accounting
+16,Darsih,Widya,Female,Staff,Customer Service
+17,Agustina,Rukun,Female,Staff,Sales & Marketing
+18,Cahyono,Tenteram,Male,Manager,Technical Support
+19,Natali,Sejahtera,Female,Staff,Technical Support
+20,Aris,Terang,Male,Staff,Sales & Marketing
+21,Erna,Alexander,Female,Staff,Customer Service
+22,Ika,Dominik,Female,Staff,Technical Support
+23,Harum,Margo,Female,Staff,Customer Service
+24,Bulan,Indrawan,Female,Staff,Procurement
+25,Ben,Jagat,Male,Staff,Procurement
+26,Ahmad,Alexander,Male,Staff,Warehouse
+27,Ardhi,Mada,Male,Staff,Warehouse
+28,Hardi,Widya,Male,Manager,Warehouse
+29,Dario,Maven,Male,Staff,Warehouse
+30,Lestari,Widya,Female,Staff,Warehouse
