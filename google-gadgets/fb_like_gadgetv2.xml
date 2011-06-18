@@ -23,7 +23,7 @@
   mystr = prosesURL(mystr);
   mystr = "<fb:like href='" + mystr + "'";
   mystr = "<div id='fb-root'></div>" + mystr;
-  mystr = mystr + " send='true' width='400' show_faces='true' action='like' font='arial'></fb:like>";  
+  mystr = mystr + " width='400' show_faces='false' font='arial'></fb:like>";  
   document.getElementById("test").innerHTML = mystr;  
   
       </script>
