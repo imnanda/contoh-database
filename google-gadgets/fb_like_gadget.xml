@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Facebook Like Gadget!" />
+  <Content type="html">
+    <![CDATA[
+      <div id="test"></div>
+      <script src='http://connect.facebook.net/en_US/all.js#xfbml=1'></script>
+      <script>
+  function prosesURL(str) {
+    var reObj = new RegExp("parent=.+?#");
+    var matchObj = reObj.exec(str);
+    if (matchObj == null) {
+    return "NULL";
+    } else {
+    var s = matchObj.toString();
+    s = s.replace("parent=","");
+    s = s.substr(0, (s.length-1));
+    return s;
+    }
+  }
+
+  mystr = window.location;
+  mystr = prosesURL(mystr);
+  mystr = "<fb:like href='" + mystr + "'";
+  mystr = "<div id='fb-root'></div>" + mystr;
+  mystr = mystr + " send='true' width='450' show_faces='true' action='like' font='arial'></fb:like>";  
+  document.getElementById("test").innerHTML = mystr;  
+  
+      </script>
+    ]]>
+  </Content>
+</Module>?
