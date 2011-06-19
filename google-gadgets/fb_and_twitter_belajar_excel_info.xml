@@ -31,7 +31,6 @@
 	mystr = mystr + "data-count='horizontal' data-via='belajarexcel'>Tweet</a></div>";
 	mystr = mystr + "<div style='clear: both;'></div>";
 	mystr = mystr + "<div style='float: right'><fb:like-box href='http://www.facebook.com/pages/BelajarExcelinfo/206464022731893' width='250' show_faces='false' border_color='' stream='true' header='true'></fb:like-box></div>";
-	mystr = "<div width='100%'>" + mystr + "</div>";
 	document.getElementById("myplaceholder").innerHTML = mystr;  
 
 	</script>
