@@ -25,10 +25,12 @@
 	var mystr = window.location;
 	var parseurl = prosesURL(mystr);
 	mystr = "<fb:like href='" + parseurl + "'";
-	mystr = "<div id='fb-root'></div>" + mystr;
-	mystr = mystr + " send='true' width='400' show_faces='false' action='like' font='arial'></fb:like>";  
+	mystr = "<div style='font-family: Arial; font-size: 12pt;float: left; color: #3B5998'>Share this article : &nbsp;</div><div id='fb-root' style='float:left'>" + mystr;
+	mystr = mystr + " send='true' width='400' show_faces='false' action='like' font='arial'></fb:like></div>";  
 	mystr = mystr + "<div style='float:left'><a href='http://twitter.com/share' class='twitter-share-button' data-url='" + parseurl + "' ";
 	mystr = mystr + "data-count='horizontal' data-via='belajarexcel'>Tweet</a></div>";
+	mystr = mystr + "<div style='clear: both;'></div>";
+	mystr = mystr + "<div style='float: right'><fb:like-box href='http://www.facebook.com/pages/BelajarExcelinfo/206464022731893' width='250' show_faces='false' border_color='' stream='true' header='true'></fb:like-box></div>";
 	document.getElementById("myplaceholder").innerHTML = mystr;  
 
 	</script>
