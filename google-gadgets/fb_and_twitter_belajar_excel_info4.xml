@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Facebook and Twitter Sharing Gadget!" />
+  <Content type="html">
+    <![CDATA[
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr><td height="350" valign="top">
+	<div id="myplaceholder" style="float: left" width="100%"></div>
+	</td></tr>
+	</table>
+	<script src='http://connect.facebook.net/en_US/all.js#xfbml=1'></script>
+	<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+	<script>
+	
+	function prosesURL(str) {
+		var reObj = new RegExp("parent=.+?#");
+		var matchObj = reObj.exec(str);
+		if (matchObj == null) 
+		{
+			return "NULL";
+		} else {
+			var strMatch = matchObj.toString();
+			strMatch = strMatch.replace("parent=","");
+			strMatch = strMatch.substr(0, (strMatch.length-1));
+			return strMatch;
+		}
+	}
+
+	var mystr = window.location;
+	var parseurl = prosesURL(mystr);
+	mystr = "<fb:like href='" + parseurl + "'";
+	mystr = "<div style='font-family: Arial; font-size: 12pt;float: left; color: #3B5998'>Share this article : &nbsp;</div><div id='fb-root' style='float:left'>" + mystr;
+	mystr = mystr + " send='true' width='400' show_faces='false' action='like' font='arial'></fb:like></div>";  
+	mystr = mystr + "<div style='float:left'><a href='http://twitter.com/share' class='twitter-share-button' data-url='" + parseurl + "' ";
+	mystr = mystr + "data-count='horizontal' data-via='belajarexcel'>Tweet</a></div>";
+	document.getElementById("myplaceholder").innerHTML = mystr;  
+	</script>
+    ]]>
+  </Content>
+</Module>
